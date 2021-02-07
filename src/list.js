@@ -1,15 +1,19 @@
+import {BiEdit}  from 'react-icons/bi'
+import {MdDeleteForever} from 'react-icons/md'
 export const List = ({list,removeItem,editItem})=>{
     return (
         <div className="list-container">
         {list.map(item=>{
             const {id,title} = item
-            return <article>
+            return <article className='art'>
             <p>{title}</p>
-            <button onClick={()=>{
+            <div className="edits">
+            <span className='edit' onClick={()=>{
                 editItem(id)
-            }} >edit</button><button onClick={()=>{
+            }} ><BiEdit/></span><span className='delete' onClick={()=>{
                 removeItem(id)
-            }}>delete</button>
+            }}><MdDeleteForever/></span>
+            </div>
             </article>
         })}
         
