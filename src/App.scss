@@ -68,3 +68,23 @@ body {
   background: #61a0ce;
   color: white;
 }
+@media only screen and (min-width: 761px) and (max-width: 1062px) {
+  .main-container {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+  .main-container {
+    width: 80%;
+    h4 {
+      font-size: 20px;
+    }
+    .input {
+      padding: 4px;
+      width: 40%;
+    }
+  }
+  .submit {
+    padding: 5px 10px 5px 10px;
+  }
+}
