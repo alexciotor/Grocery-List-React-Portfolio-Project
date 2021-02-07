@@ -7,6 +7,7 @@ const [name,setName ] = useState('')
 const [list,setList] = useState([])
 const [isEditing, setIsEditing] = useState(false)
 const [editId, setEditId] = useState(null)
+ 
 console.log(list);
   const handlesubmit=(e)=>{
  e.preventDefault()
@@ -48,17 +49,19 @@ else{
     <div  className='main-container' >
  <h4>grocery list</h4>
  <form onSubmit={handlesubmit} >
- <input type="text" value = {name} onChange={(e)=>{
+ <input className='input' type="text" value = {name} placeholder='e.g. eggs' onChange={(e)=>{
    setName(e.target.value)
  }}  />
- <button >submit</button>
+ <button className='submit' onClick={()=>{
+ 
+ }} >{isEditing? 'edit':'submit'}</button>
  </form>
  <List removeItem={removeItem} editItem = {editItem}list = {list}/>
- <button
+  { list.length>0 &&  <button className='clear'
  onClick={()=>{
    clear()
  }} 
- >clear</button>
+ >clear items</button>}
     </div>
   );
 }
